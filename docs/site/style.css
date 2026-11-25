@@ -146,6 +146,20 @@ details p{padding:0 22px 20px;color:var(--muted)}
 .foot{border-top:1px solid var(--stroke);padding:34px clamp(16px,4vw,48px);display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between;color:var(--muted);font-size:.9rem}
 .foot .brand{color:var(--text);font-size:1rem}
 
+/* devices marquee */
+.devices{padding:18px 0 6px;text-align:center}
+.dev-h{color:var(--muted);font-weight:700;font-size:.95rem;margin-bottom:16px;letter-spacing:.3px}
+.marquee{overflow:hidden;direction:ltr;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:14px;width:max-content;animation:scroll 38s linear infinite;padding:6px 0}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.dev{display:flex;align-items:center;gap:10px;padding:11px 20px;border-radius:16px;background:var(--panel);border:1px solid var(--stroke);white-space:nowrap;direction:auto}
+.dev svg{width:24px;height:24px;stroke:var(--muted);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.dev b{font-weight:800;font-size:.95rem}
+.dev em{font-style:normal;font-size:.72rem;font-weight:800;padding:2px 9px;border-radius:99px;background:var(--panel2);color:var(--muted)}
+.dev.now{border-color:rgba(45,212,191,.5);background:rgba(45,212,191,.09)}
+.dev.now svg{stroke:var(--teal)}
+.dev.now em{background:rgba(45,212,191,.2);color:var(--teal)}
 /* reveal */
 .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
