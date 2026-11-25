@@ -54,9 +54,8 @@
       <button type="button" class="si on" data-view="account"><i class="ic" data-ic="user"></i><span data-t="s_account"></span></button>
       <button type="button" class="si" data-view="activate"><i class="ic" data-ic="bolt"></i><span data-t="s_activate"></span></button>
       <button type="button" class="si" data-view="key"><i class="ic" data-ic="key"></i><span data-t="s_key"></span></button>
-      <button type="button" class="si soon" data-view="soon"><i class="ic" data-ic="list"></i><span data-t="s_playlists"></span><em data-t="soon"></em></button>
-      <button type="button" class="si soon" data-view="soon"><i class="ic" data-ic="lock"></i><span data-t="s_pin"></span><em data-t="soon"></em></button>
-      <button type="button" class="si soon" data-view="soon"><i class="ic" data-ic="swap"></i><span data-t="s_switch"></span><em data-t="soon"></em></button>
+      <button type="button" class="si" data-view="playlists"><i class="ic" data-ic="list"></i><span data-t="s_playlists"></span></button>
+      <button type="button" class="si" data-view="pin"><i class="ic" data-ic="lock"></i><span data-t="s_pin"></span></button>
       <button type="button" class="si out" id="logout"><i class="ic" data-ic="out"></i><span data-t="s_logout"></span></button>
     </aside>
 
@@ -106,10 +105,49 @@
       <div class="view" id="v-key" hidden>
         <h2 data-t="k_h"></h2>
         <p class="sub" data-t="k_p"></p>
-        <label class="ff"><span data-t="k_new"></span><input id="newKey" maxlength="6" placeholder="••••••"></label>
+        <div class="keybox"><div><small data-t="k_cur"></small><b id="curKey" dir="ltr">••••••</b></div>
+          <button class="btn btn-ghost sm" type="button" id="keyShow" data-t="k_show"></button></div>
+        <div class="ff-row"><label class="ff"><span data-t="k_new"></span><input id="newKey" maxlength="6" placeholder="••••••"></label>
+          <button class="btn btn-ghost sm" type="button" id="keyRand" data-t="k_rand"></button></div>
         <p class="note2" data-t="k_note"></p>
         <button class="btn btn-gold" type="button" id="keySave" data-t="k_save"></button>
         <p class="ok" id="keyOk" hidden data-t="k_ok"></p>
+      </div>
+
+      <!-- playlists -->
+      <div class="view" id="v-playlists" hidden>
+        <h2 data-t="pl_h"></h2>
+        <p class="sub" data-t="pl_p"></p>
+        <div class="pl-list" id="plList"></div>
+        <div class="pl-form" id="plForm">
+          <h3 id="plFormT" data-t="pl_add"></h3>
+          <div class="seg" id="plType"><button type="button" class="on" data-pt="link" data-t="pl_t_link"></button><button type="button" data-pt="login" data-t="pl_t_login"></button></div>
+          <label class="ff w"><span data-t="pl_name"></span><input id="plName" maxlength="30" placeholder="My playlist" dir="auto"></label>
+          <label class="ff w" id="plUrlW"><span data-t="pl_url"></span><input id="plUrl" placeholder="https://example.com/list.m3u" dir="ltr"></label>
+          <div id="plLoginW" hidden>
+            <label class="ff w"><span data-t="pl_host"></span><input id="plHost" placeholder="http://example.com:8080" dir="ltr"></label>
+            <div class="two"><label class="ff w"><span data-t="pl_user"></span><input id="plUser" dir="ltr"></label><label class="ff w"><span data-t="pl_pass"></span><input id="plPass" type="password" dir="ltr"></label></div>
+          </div>
+          <p class="note2" data-t="pl_note"></p>
+          <p class="err" id="plErr"></p>
+          <div class="btnrow"><button class="btn btn-gold" type="button" id="plSave" data-t="pl_save"></button><button class="btn btn-ghost" type="button" id="plCancel" data-t="pl_cancel" hidden></button></div>
+        </div>
+      </div>
+
+      <!-- parent pin -->
+      <div class="view" id="v-pin" hidden>
+        <h2 data-t="pin_h"></h2>
+        <p class="sub" data-t="pin_p"></p>
+        <div class="switch-row"><div><b data-t="pin_on"></b><small data-t="pin_on_d"></small></div><button type="button" class="tgl" id="pinTgl" aria-pressed="false"><i></i></button></div>
+        <div id="pinFields" hidden>
+          <div class="two"><label class="ff w"><span data-t="pin_new"></span><input id="pin1" inputmode="numeric" maxlength="4" placeholder="••••" type="password"></label>
+          <label class="ff w"><span data-t="pin_conf"></span><input id="pin2" inputmode="numeric" maxlength="4" placeholder="••••" type="password"></label></div>
+          <label class="ck"><input type="checkbox" id="pinLists" checked><span data-t="pin_c1"></span></label>
+          <label class="ck"><input type="checkbox" id="pinSet" checked><span data-t="pin_c2"></span></label>
+          <p class="err" id="pinErr"></p>
+          <button class="btn btn-gold" type="button" id="pinSave" data-t="pin_save"></button>
+        </div>
+        <p class="ok" id="pinOk" hidden data-t="pin_ok"></p>
       </div>
 
       <div class="view" id="v-soon" hidden>
