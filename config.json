@@ -22,5 +22,15 @@
     "messageEn": "Version 1.0.4 is out: in-app announcements, remote section controls, and stability improvements.",
     "force": false
   },
-  "matches": []
+  "matches": [
+    {
+      "date": "123123-12-12",
+      "competition": "123123",
+      "home": "12213",
+      "away": "123321",
+      "kickoff": "15:21",
+      "channel": "12332",
+      "featured": true
+    }
+  ]
 }
