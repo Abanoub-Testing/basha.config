@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Basha Player | باشا بلاير</title>
+<meta name="description" content="Basha Player: a premium IPTV player for your own playlist. 7 days free.">
+<meta name="theme-color" content="#060A13">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script>if(location.search)document.documentElement.classList.add("nofx")</script>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="top">
+  <a class="brand" href="#top" aria-label="Basha Player">
+    <img src="logo.svg" alt="" width="36" height="36">
+    <span>Basha <b>Player</b></span>
+  </a>
+  <nav class="links">
+    <a href="#features" data-i18n="nav_features"></a>
+    <a href="#how" data-i18n="nav_how"></a>
+    <a href="#pricing" data-i18n="nav_pricing"></a>
+    <a href="#faq" data-i18n="nav_faq"></a>
+  </nav>
+  <div class="tools">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="ar" class="on">ع</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="de">DE</button>
+    </div>
+    <a class="btn btn-ghost sm" href="#activate" data-i18n="nav_activate"></a>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-text reveal">
+    <span class="pill"><i class="dot"></i><span data-i18n="hero_pill"></span></span>
+    <h1><span data-i18n="hero_h1a"></span> <em data-i18n="hero_h1b"></em></h1>
+    <p class="lead" data-i18n="hero_lead"></p>
+    <div class="cta">
+      <a class="btn btn-gold" href="https://files.instinct.com/9qezgj1qcyme-basha-player" data-i18n="cta_download"></a>
+      <a class="btn btn-ghost" href="#features" data-i18n="cta_features"></a>
+    </div>
+    <ul class="mini">
+      <li data-i18n="mini1"></li><li data-i18n="mini2"></li><li data-i18n="mini3"></li>
+    </ul>
+  </div>
+
+  <div class="stage reveal" aria-hidden="true">
+    <div class="glow"></div>
+    <div class="phone" id="phone">
+      <div class="screen">
+        <div class="app-top">
+          <div class="app-logo"><img src="logo.svg" alt="" width="18" height="18"><span>Basha Player</span></div>
+          <div class="app-chips"><span class="on" data-i18n="chip_live"></span><span data-i18n="chip_movies"></span><span data-i18n="chip_series"></span></div>
+          <div class="app-search"></div>
+        </div>
+        <div class="app-banner"><i></i><span data-i18n="app_banner"></span></div>
+        <div class="app-title" data-i18n="app_today"></div>
+        <div class="app-cards">
+          <div class="mc live">
+            <span class="badge" data-i18n="app_live"></span>
+            <div class="teams"><b>RMA</b><small>VS</small><b>BAR</b></div>
+            <div class="meta"><span>Real Madrid</span><span>Barcelona</span></div>
+            <div class="time">10:00 PM</div>
+          </div>
+          <div class="mc">
+            <div class="teams"><b>LIV</b><small>VS</small><b>MCI</b></div>
+            <div class="meta"><span>Liverpool</span><span>Man City</span></div>
+            <div class="time">07:30 PM</div>
+          </div>
+          <div class="mc">
+            <div class="teams"><b>AHL</b><small>VS</small><b>ZAM</b></div>
+            <div class="meta"><span>Al Ahly</span><span>Zamalek</span></div>
+            <div class="time">09:00 PM</div>
+          </div>
+        </div>
+        <div class="app-rows"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+    <div class="float f1"><b>7</b><span data-i18n="float_trial"></span></div>
+    <div class="float f2"><span class="rd"></span><span data-i18n="float_live"></span></div>
+  </div>
+</section>
+
+<section class="sec" id="features">
+  <div class="sec-head reveal"><h2 data-i18n="feat_h"></h2><p data-i18n="feat_p"></p></div>
+  <div class="grid" id="featGrid"></div>
+</section>
+
+<section class="sec" id="how">
+  <div class="sec-head reveal"><h2 data-i18n="how_h"></h2></div>
+  <div class="steps">
+    <div class="step reveal"><span class="n">1</span><h3 data-i18n="s1_h"></h3><p data-i18n="s1_p"></p></div>
+    <div class="step reveal"><span class="n">2</span><h3 data-i18n="s2_h"></h3><p data-i18n="s2_p"></p></div>
+    <div class="step reveal"><span class="n">3</span><h3 data-i18n="s3_h"></h3><p data-i18n="s3_p"></p></div>
+  </div>
+</section>
+
+<section class="sec" id="pricing">
+  <div class="sec-head reveal"><h2 data-i18n="price_h"></h2><p data-i18n="price_p"></p></div>
+  <div class="prices">
+    <article class="plan reveal">
+      <h3 data-i18n="plan1"></h3>
+      <div class="amt"><span class="cur">€</span>5<small data-i18n="per_year"></small></div>
+      <ul><li data-i18n="pl_a"></li><li data-i18n="pl_b"></li><li data-i18n="pl_c"></li></ul>
+      <a class="btn btn-ghost" href="#activate" data-i18n="plan_cta"></a>
+    </article>
+    <article class="plan best reveal">
+      <span class="ribbon" data-i18n="best"></span>
+      <h3 data-i18n="plan2"></h3>
+      <div class="amt"><span class="cur">€</span>10<small data-i18n="once"></small></div>
+      <ul><li data-i18n="pl_a"></li><li data-i18n="pl_b"></li><li data-i18n="pl_d"></li></ul>
+      <a class="btn btn-gold" href="#activate" data-i18n="plan_cta"></a>
+    </article>
+  </div>
+  <p class="note reveal" data-i18n="price_note"></p>
+</section>
+
+<section class="sec" id="activate">
+  <div class="act reveal">
+    <h2 data-i18n="act_h"></h2>
+    <p data-i18n="act_p"></p>
+    <div class="fake">
+      <label><span data-i18n="act_mac"></span><input type="text" disabled placeholder="AA:BB:CC:DD:EE:FF"></label>
+      <label><span data-i18n="act_key"></span><input type="text" disabled placeholder="••••••"></label>
+      <button type="button" class="btn btn-gold" disabled data-i18n="act_btn"></button>
+    </div>
+    <small class="soon" data-i18n="act_soon"></small>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="sec-head reveal"><h2 data-i18n="faq_h"></h2></div>
+  <div class="faq reveal" id="faqList"></div>
+</section>
+
+<section class="sec dl">
+  <div class="dl-card reveal">
+    <img src="logo.svg" alt="" width="72" height="72">
+    <h2 data-i18n="dl_h"></h2>
+    <p data-i18n="dl_p"></p>
+    <a class="btn btn-gold lg" href="https://files.instinct.com/9qezgj1qcyme-basha-player" data-i18n="cta_download"></a>
+    <small data-i18n="dl_small"></small>
+  </div>
+</section>
+</main>
+
+<section class="legal" id="legal" hidden>
+  <div class="legal-in">
+    <a class="back" href="#top" data-i18n="legal_back"></a>
+    <h2 data-i18n="legal_h"></h2>
+    <p data-i18n="legal_ph"></p>
+    <p data-i18n="legal_1"></p>
+    <p data-i18n="legal_2"></p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="brand"><img src="logo.svg" alt="" width="26" height="26"><span>Basha <b>Player</b></span></div>
+  <p data-i18n="foot_note"></p>
+  <a href="#legal" data-i18n="legal_h"></a>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
