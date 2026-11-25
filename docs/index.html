@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لوحة تحكم بشة بلاير</title>
+<style>
+  :root {
+    --ink: #251f21;
+    --ink2: #585254;
+    --teal: #73a89a;
+    --teal-dark: #5b8a7e;
+    --red: #ed313e;
+    --hairline: #eae9ea;
+    --sand: #f4efec;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, "Segoe UI", Tahoma, sans-serif;
+    background: var(--sand);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .card {
+    max-width: 640px;
+    margin: 24px auto;
+    background: #fff;
+    border-radius: 24px;
+    padding: 24px;
+  }
+  @media (min-width: 768px) { .card { padding: 36px; margin: 40px auto; } }
+  h1 { font-size: 26px; margin: 0 0 4px; }
+  h2 { font-size: 20px; margin: 32px 0 12px; padding-top: 20px; border-top: 1px solid var(--hairline); }
+  .fact { color: var(--teal-dark); font-weight: 600; margin: 0 0 8px; }
+  .intro { color: var(--ink); margin: 0 0 8px; }
+  .note {
+    background: var(--sand);
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin: 12px 0;
+  }
+  .note b { display: block; margin-bottom: 2px; }
+  label { display: block; font-size: 14px; color: var(--ink2); margin: 14px 0 4px; }
+  input[type="text"], input[type="password"], textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--ink);
+    background: #fff;
+  }
+  input:focus, textarea:focus { outline: 2px solid var(--teal); border-color: var(--teal); }
+  textarea { font-family: ui-monospace, monospace; font-size: 13px; direction: ltr; text-align: left; }
+  .ltr input { direction: ltr; text-align: left; }
+  .toggle-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 10px 0; }
+  .toggle-row span { font-weight: 600; }
+  .seg { display: flex; border: 1px solid var(--hairline); border-radius: 8px; overflow: hidden; }
+  .seg button {
+    border: 0; background: #fff; color: var(--ink);
+    padding: 8px 18px; font-size: 14px; font-family: inherit; cursor: pointer; min-height: 44px;
+  }
+  .seg button.on { background: var(--teal); color: #fff; font-weight: 600; }
+  .btn {
+    display: inline-block;
+    border: 0; border-radius: 8px;
+    padding: 12px 24px; font-size: 15px; font-weight: 600; font-family: inherit;
+    cursor: pointer; min-height: 44px; margin-top: 16px;
+  }
+  .btn-primary { background: var(--ink); color: #fff; }
+  .btn-secondary { background: #fff; color: var(--ink); border: 1px solid var(--hairline); }
+  .btn-ghost { background: none; color: var(--ink2); text-decoration: underline; padding: 8px; }
+  .btn:disabled { opacity: .5; cursor: default; }
+  #status { min-height: 24px; margin: 12px 0 0; color: var(--ink2); }
+  #status.err { color: var(--red); }
+  .caption { font-size: 13px; color: var(--ink2); margin-top: 4px; }
+  footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--hairline); font-size: 13px; color: var(--ink2); }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>لوحة تحكم بشة بلاير</h1>
+  <p class="fact">التغيير يوصل للمستخدمين أول ما يفتحوا التطبيق</p>
+  <p class="intro">من هنا تتحكم في التطبيق من غير ما تنزل نسخة جديدة: إعلان للناس، إخفاء وإظهار الأقسام، وإشعار تحديث.</p>
+
+  <h2>مفتاح الدخول</h2>
+  <div class="note">
+    <b>المفتاح بيتسجل في متصفحك بس</b>
+    أول مرة تلصق المفتاح هيتسجل على الجهاز ده ومش هتحتاج تلصقه تاني. متفتحش اللوحة من جهاز مش بتاعك، ولو حصل دوس "نسي المفتاح" بعد ما تخلص.
+  </div>
+  <div class="ltr">
+    <label for="token">المفتاح (التوكن)</label>
+    <input type="password" id="token" autocomplete="off">
+  </div>
+  <button class="btn btn-secondary" id="loadBtn">تحميل الإعدادات الحالية</button>
+  <button class="btn btn-ghost" id="forgetBtn">نسي المفتاح على الجهاز ده</button>
+
+  <h2>الإعلان</h2>
+  <div class="toggle-row">
+    <span>حالة الإعلان</span>
+    <div class="seg" id="annActive">
+      <button data-v="on">مفعّل</button>
+      <button data-v="off">مقفول</button>
+    </div>
+  </div>
+  <label for="annAr">نص الإعلان بالعربي</label>
+  <input type="text" id="annAr">
+  <div class="ltr">
+    <label for="annEn">نص الإعلان بالإنجليزي (اختياري)</label>
+    <input type="text" id="annEn">
+    <label for="annId">معرّف الإعلان</label>
+    <input type="text" id="annId" value="1">
+  </div>
+  <p class="caption">لما تكتب إعلان جديد، غيّر المعرّف (زيد الرقم واحد) عشان يظهر للناس اللي قفلوا الإعلان القديم.</p>
+
+  <h2>الأقسام</h2>
+  <p>تقدر تخفي أي قسم من التطبيق فورًا وترجعه تاني في أي وقت.</p>
+  <div id="toggles"></div>
+
+  <h2>إشعار التحديث</h2>
+  <p>لما تنزل نسخة جديدة، اكتب رقمها هنا والمستخدمين هيشوفوا إشعار بلينك التحميل. خلي الرقم 0 لو مفيش تحديث.</p>
+  <div class="ltr">
+    <label for="updVer">رقم النسخة الجديدة (versionCode)</label>
+    <input type="text" id="updVer" value="0" inputmode="numeric">
+    <label for="updUrl">لينك التحميل</label>
+    <input type="text" id="updUrl">
+  </div>
+  <label for="updAr">رسالة التحديث بالعربي</label>
+  <input type="text" id="updAr">
+  <div class="ltr">
+    <label for="updEn">رسالة التحديث بالإنجليزي (اختياري)</label>
+    <input type="text" id="updEn">
+  </div>
+
+  <h2>متقدم</h2>
+  <button class="btn btn-ghost" id="jsonToggle">فتح الـ JSON الخام</button>
+  <div id="jsonBox" hidden>
+    <textarea id="jsonText" rows="14"></textarea>
+    <button class="btn btn-secondary" id="jsonApply">تطبيق الـ JSON على الخانات</button>
+  </div>
+
+  <h2>الحفظ</h2>
+  <button class="btn btn-primary" id="saveBtn">حفظ ونشر الإعدادات</button>
+  <p id="status" role="status"></p>
+
+  <footer>الإعدادات بتتحفظ في ملف config.json على الريبو Abanoub-Testing/basha.config، والتطبيق بيقراه عند كل تشغيل، ولو النت قطع بيكمّل بآخر نسخة محفوظة عنده.</footer>
+</div>
+
+<script>
+const REPO = 'Abanoub-Testing/basha.config';
+const CONFIG_PATH = 'config.json';
+const API = `https://api.github.com/repos/${REPO}/contents/${CONFIG_PATH}`;
+const DOWNLOAD_PAGE = 'https://files.instinct.com/9qezgj1qcyme-basha-player';
+const TOKEN_KEY = 'basha_admin_token';
+
+const TOGGLES = [
+  ['matches', 'الماتشات'],
+  ['live', 'اللايف'],
+  ['movies', 'الأفلام'],
+  ['series', 'المسلسلات'],
+  ['favorites', 'المفضلة'],
+  ['guide', 'الجايد'],
+  ['search', 'البحث'],
+];
+
+let raw = {};
+let sha = null;
+
+const $ = (id) => document.getElementById(id);
+const statusEl = $('status');
+function say(msg, isError) {
+  statusEl.textContent = msg;
+  statusEl.className = isError ? 'err' : '';
+}
+function setBusy(b) {
+  $('loadBtn').disabled = b;
+  $('saveBtn').disabled = b;
+  $('saveBtn').textContent = b ? 'شغال…' : 'حفظ ونشر الإعدادات';
+}
+
+function toBase64(text) {
+  const bytes = new TextEncoder().encode(text);
+  let bin = '';
+  for (const b of bytes) bin += String.fromCharCode(b);
+  return btoa(bin);
+}
+function fromBase64(b64) {
+  const bin = atob(b64.replace(/\n/g, ''));
+  const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
+  return new TextDecoder().decode(bytes);
+}
+
+// Build toggle rows
+TOGGLES.forEach(([key, label]) => {
+  const row = document.createElement('div');
+  row.className = 'toggle-row';
+  row.innerHTML = `<span>${label}</span>
+    <div class="seg" data-toggle="${key}">
+      <button data-v="on">ظاهر</button>
+      <button data-v="off">مخفي</button>
+    </div>`;
+  $('toggles').appendChild(row);
+});
+
+function getSeg(el) {
+  return el.querySelector('button.on')?.dataset.v === 'on';
+}
+function setSeg(el, on) {
+  el.querySelectorAll('button').forEach((b) => b.classList.toggle('on', (b.dataset.v === 'on') === !!on));
+}
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.seg button');
+  if (!btn) return;
+  setSeg(btn.parentElement, btn.dataset.v === 'on');
+});
+
+function formToConfig() {
+  const version = parseInt($('updVer').value, 10);
+  const hasAnn = getSeg($('annActive')) && ($('annAr').value.trim() !== '' || $('annEn').value.trim() !== '');
+  const hasUpd = !isNaN(version) && version > 0;
+  const toggles = {};
+  document.querySelectorAll('[data-toggle]').forEach((seg) => { toggles[seg.dataset.toggle] = getSeg(seg); });
+  return {
+    ...raw,
+    version: 1,
+    announcement: hasAnn
+      ? { id: $('annId').value.trim() || '1', active: true, ar: $('annAr').value.trim(), en: $('annEn').value.trim() }
+      : null,
+    toggles,
+    update: hasUpd
+      ? { versionCode: version, url: $('updUrl').value.trim(), messageAr: $('updAr').value.trim(), messageEn: $('updEn').value.trim(), force: false }
+      : null,
+  };
+}
+
+function configToForm(cfg) {
+  const a = cfg.announcement || {};
+  const t = cfg.toggles || {};
+  const u = cfg.update || {};
+  setSeg($('annActive'), !!a.active);
+  $('annId').value = String(a.id ?? '1');
+  $('annAr').value = a.ar ?? '';
+  $('annEn').value = a.en ?? '';
+  document.querySelectorAll('[data-toggle]').forEach((seg) => {
+    const v = t[seg.dataset.toggle];
+    setSeg(seg, v !== false);
+  });
+  $('updVer').value = String(u.versionCode ?? 0);
+  $('updUrl').value = u.url || DOWNLOAD_PAGE;
+  $('updAr').value = u.messageAr ?? '';
+  $('updEn').value = u.messageEn ?? '';
+}
+
+function authHeaders() {
+  return { Authorization: `Bearer ${$('token').value.trim()}`, Accept: 'application/vnd.github+json' };
+}
+
+async function load() {
+  if ($('token').value.trim() === '') { say('الصق المفتاح الأول.', true); return; }
+  localStorage.setItem(TOKEN_KEY, $('token').value.trim());
+  setBusy(true); say('بحمّل الإعدادات الحالية…');
+  try {
+    const resp = await fetch(API, { headers: authHeaders() });
+    if (resp.status === 401 || resp.status === 403) { say('المفتاح غلط أو منتهي أو مفيهوش صلاحية الكتابة على الريبو.', true); return; }
+    if (resp.status === 404) {
+      raw = {}; sha = null; configToForm({});
+      say('مفيش إعدادات محفوظة لسه. دي أول مرة — عدّل اللي تحبه ودوس حفظ.');
+      return;
+    }
+    if (!resp.ok) { say(`مشكلة من جيتهاب (كود ${resp.status}). جرّب تاني.`, true); return; }
+    const data = await resp.json();
+    raw = JSON.parse(fromBase64(data.content));
+    sha = data.sha || null;
+    configToForm(raw);
+    say('اتحمّلت الإعدادات الحالية. عدّل براحتك وبعدين احفظ.');
+  } catch {
+    say('مفيش اتصال بالنت أو جيتهاب مش بيرد. جرّب تاني.', true);
+  } finally {
+    setBusy(false);
+  }
+}
+
+async function save() {
+  if ($('token').value.trim() === '') { say('الصق المفتاح الأول.', true); return; }
+  const version = parseInt($('updVer').value, 10);
+  if ($('updVer').value.trim() !== '' && (isNaN(version) || version < 0)) {
+    say('رقم النسخة في إشعار التحديث لازم يكون رقم صحيح.', true); return;
+  }
+  localStorage.setItem(TOKEN_KEY, $('token').value.trim());
+  setBusy(true); say('بحفظ…');
+  try {
+    let currentSha = sha;
+    let freshRaw = raw;
+    const head = await fetch(API, { headers: authHeaders() });
+    if (head.status === 401 || head.status === 403) { say('المفتاح غلط أو منتهي أو مفيهوش صلاحية الكتابة على الريبو.', true); return; }
+    if (head.ok) {
+      const cur = await head.json();
+      currentSha = cur.sha || null;
+      try { freshRaw = JSON.parse(fromBase64(cur.content)); raw = freshRaw; } catch (e) { /* keep old raw */ }
+    } else if (head.status !== 404) {
+      say(`مشكلة من جيتهاب (كود ${head.status}). جرّب تاني.`, true); return;
+    }
+    const cfg = formToConfig();
+    const body = { message: 'Update Basha Player config from admin page', content: toBase64(JSON.stringify(cfg, null, 2)) };
+    if (currentSha) body.sha = currentSha;
+    const resp = await fetch(API, {
+      method: 'PUT',
+      headers: { ...authHeaders(), 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    if (resp.status === 401 || resp.status === 403) { say('المفتاح غلط أو منتهي أو مفيهوش صلاحية الكتابة على الريبو.', true); return; }
+    if (!resp.ok) { say(`الحفظ مكملش (كود ${resp.status}). جرّب تاني.`, true); return; }
+    const data = await resp.json();
+    sha = data.content?.sha || null;
+    raw = cfg;
+    say('اتحفظ. التطبيق هياخد الإعدادات الجديدة عند كل مستخدم أول ما يفتح.');
+  } catch {
+    say('مفيش اتصال بالنت أو جيتهاب مش بيرد. الحفظ متمش.', true);
+  } finally {
+    setBusy(false);
+  }
+}
+
+$('loadBtn').addEventListener('click', load);
+$('saveBtn').addEventListener('click', save);
+$('forgetBtn').addEventListener('click', () => {
+  localStorage.removeItem(TOKEN_KEY);
+  $('token').value = '';
+  say('المفتاح اتمسح من الجهاز ده.');
+});
+$('jsonToggle').addEventListener('click', () => {
+  const box = $('jsonBox');
+  if (box.hidden) {
+    $('jsonText').value = JSON.stringify(formToConfig(), null, 2);
+    box.hidden = false;
+    $('jsonToggle').textContent = 'قفل صندوق الـ JSON';
+  } else {
+    box.hidden = true;
+    $('jsonToggle').textContent = 'فتح الـ JSON الخام';
+  }
+});
+$('jsonApply').addEventListener('click', () => {
+  try {
+    raw = JSON.parse($('jsonText').value);
+    configToForm(raw);
+    $('jsonBox').hidden = true;
+    $('jsonToggle').textContent = 'فتح الـ JSON الخام';
+    say('اتطبّق الـ JSON على الخانات. راجع ودوس حفظ.');
+  } catch {
+    say('الـ JSON فيه غلط صياغة. راجع الأقواس والعلامات.', true);
+  }
+});
+
+// Startup: restore remembered token and defaults
+const savedToken = localStorage.getItem(TOKEN_KEY);
+if (savedToken) {
+  $('token').value = savedToken;
+  load();
+} else {
+  configToForm({});
+}
+</script>
+</body>
+</html>
