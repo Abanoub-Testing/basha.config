@@ -11,8 +11,8 @@ a_h:"Account details",a_days:"days left",a_mac:"MAC address",a_status:"Status",a
 st_trial:"Free trial",st_active:"Active",st_life:"Lifetime",
 a_note:"Your free trial is running. Activate to keep using the app after it ends.",a_cta:"Activate now",
 p_h:"Activate device",p_p:"Choose a plan and a payment method. Your device unlocks right after payment.",plan1:"1 year",plan2:"Lifetime",per_year:"/ year",once:"one time",best:"Best value",p_year_d:"Renew yearly",p_life_d:"Pay once, never renew",
-p_method:"Payment method",m_card:"Card",m_card_d:"Visa, Mastercard",m_pp_d:"Pay with your PayPal account",m_manual:"Vodafone Cash / InstaPay",m_manual_d:"Egypt, confirmed by us",m_code:"Activation code",m_code_d:"From an authorised reseller",
-c_l:"Activation code",mn_p:"You will get the number to send to, and the amount. Send the receipt on WhatsApp and we activate your device after we confirm it.",
+p_method:"Payment method",m_card:"Card",m_card_d:"Visa, Mastercard",m_pp_d:"Pay with your PayPal account",m_code:"Activation code",m_code_d:"From an authorised reseller",
+c_l:"Activation code",
 p_ck:"I have my own playlist. I understand the app includes no channels or content.",p_note:"Basha Player is a media player only. Please read the Legal terms before paying.",
 p_total:"Total",p_pay:"Pay and activate",p_help:"Problem with a payment?",p_wa:"Contact support on WhatsApp",
 k_h:"Device key",k_p:"Set a new key for your device. It protects your account and playlists.",k_new:"New device key (6 characters)",k_note:"If you forget your key you can always read it in the app on your device.",k_save:"Save key",k_ok:"Key updated (demo).",
@@ -29,8 +29,8 @@ a_h:"بيانات الحساب",a_days:"يوم متبقي",a_mac:"عنوان MAC
 st_trial:"تجربة مجانية",st_active:"مفعّل",st_life:"مدى الحياة",
 a_note:"تجربتك المجانية شغالة. فعّل عشان تكمل استخدام التطبيق بعد ما تخلص.",a_cta:"فعّل دلوقتي",
 p_h:"تفعيل الجهاز",p_p:"اختار الخطة وطريقة الدفع. جهازك بيتفتح بعد الدفع على طول.",plan1:"سنة",plan2:"مدى الحياة",per_year:"/ سنة",once:"مرة واحدة",best:"الأوفر",p_year_d:"تجديد كل سنة",p_life_d:"ادفع مرة وبس",
-p_method:"طريقة الدفع",m_card:"كارت",m_card_d:"فيزا، ماستركارد",m_pp_d:"ادفع بحساب PayPal",m_manual:"فودافون كاش / انستاباي",m_manual_d:"مصر، بنأكدها إحنا",m_code:"كود تفعيل",m_code_d:"من موزع معتمد",
-c_l:"كود التفعيل",mn_p:"هتاخد الرقم اللي تحوّل عليه والمبلغ. ابعت الإيصال على واتساب وبنفعّل جهازك بعد التأكيد.",
+p_method:"طريقة الدفع",m_card:"كارت",m_card_d:"فيزا، ماستركارد",m_pp_d:"ادفع بحساب PayPal",m_code:"كود تفعيل",m_code_d:"من موزع معتمد",
+c_l:"كود التفعيل",
 p_ck:"عندي قائمة تشغيل خاصة بيا. وفاهم إن التطبيق مفيهوش قنوات أو محتوى.",p_note:"باشا بلاير مشغّل وسائط فقط. اقرأ الشروط القانونية قبل الدفع.",
 p_total:"الإجمالي",p_pay:"ادفع وفعّل",p_help:"مشكلة في الدفع؟",p_wa:"كلمنا على واتساب",
 k_h:"مفتاح الجهاز",k_p:"حدد مفتاح جديد لجهازك. بيحمي حسابك وقوائمك.",k_new:"مفتاح جديد (٦ حروف)",k_note:"لو نسيت المفتاح تقدر دايماً تشوفه في التطبيق على جهازك.",k_save:"احفظ المفتاح",k_ok:"اتغيّر المفتاح (تجربة).",
@@ -47,8 +47,8 @@ a_h:"Kontodetails",a_days:"Tage übrig",a_mac:"MAC-Adresse",a_status:"Status",a_
 st_trial:"Kostenloser Test",st_active:"Aktiv",st_life:"Lebenslang",
 a_note:"Dein kostenloser Test läuft. Aktiviere, um die App danach weiter zu nutzen.",a_cta:"Jetzt aktivieren",
 p_h:"Gerät aktivieren",p_p:"Wähle Tarif und Zahlungsart. Dein Gerät wird direkt nach der Zahlung freigeschaltet.",plan1:"1 Jahr",plan2:"Lebenslang",per_year:"/ Jahr",once:"einmalig",best:"Bestes Angebot",p_year_d:"Jährlich verlängern",p_life_d:"Einmal zahlen, nie verlängern",
-p_method:"Zahlungsart",m_card:"Karte",m_card_d:"Visa, Mastercard",m_pp_d:"Mit deinem PayPal-Konto zahlen",m_manual:"Vodafone Cash / InstaPay",m_manual_d:"Ägypten, von uns bestätigt",m_code:"Aktivierungscode",m_code_d:"Von einem autorisierten Reseller",
-c_l:"Aktivierungscode",mn_p:"Du erhältst die Nummer und den Betrag. Sende den Beleg per WhatsApp, wir aktivieren dein Gerät nach der Bestätigung.",
+p_method:"Zahlungsart",m_card:"Karte",m_card_d:"Visa, Mastercard",m_pp_d:"Mit deinem PayPal-Konto zahlen",m_code:"Aktivierungscode",m_code_d:"Von einem autorisierten Reseller",
+c_l:"Aktivierungscode",
 p_ck:"Ich habe eine eigene Playlist. Mir ist klar, dass die App keine Kanäle oder Inhalte enthält.",p_note:"Basha Player ist nur ein Mediaplayer. Bitte lies vor der Zahlung die Rechtlichen Hinweise.",
 p_total:"Gesamt",p_pay:"Bezahlen und aktivieren",p_help:"Problem mit der Zahlung?",p_wa:"Support per WhatsApp",
 k_h:"Geräteschlüssel",k_p:"Lege einen neuen Schlüssel für dein Gerät fest. Er schützt dein Konto und deine Playlists.",k_new:"Neuer Geräteschlüssel (6 Zeichen)",k_note:"Wenn du den Schlüssel vergisst, kannst du ihn immer in der App auf deinem Gerät ablesen.",k_save:"Schlüssel speichern",k_ok:"Schlüssel geändert (Demo).",
@@ -95,7 +95,7 @@ $('#loginForm').addEventListener('submit',function(e){e.preventDefault();var d=T
   $('#login').hidden=true;$('#portal').hidden=false;view('account');window.scrollTo(0,0);refresh()});
 $('#logout').addEventListener('click',function(){$('#portal').hidden=true;$('#login').hidden=false;$('#key').value=''});
 $$('.plan2').forEach(function(b){b.addEventListener('click',function(){st.plan=b.dataset.plan;$$('.plan2').forEach(function(x){x.classList.toggle('on',x===b)});$('#total').textContent=st.plan==='year'?'€5':'€10'})});
-$$('.meth').forEach(function(b){b.addEventListener('click',function(){st.method=b.dataset.m;$$('.meth').forEach(function(x){x.classList.toggle('on',x===b)});$('#codeBox').hidden=st.method!=='code';$('#manualBox').hidden=st.method!=='manual'})});
+$$('.meth').forEach(function(b){b.addEventListener('click',function(){st.method=b.dataset.m;$$('.meth').forEach(function(x){x.classList.toggle('on',x===b)});$('#codeBox').hidden=st.method!=='code'})});
 $('#payBtn').addEventListener('click',function(){
   if(!$('#ck').checked){$('.ck').animate([{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}],{duration:300});$('.ck').style.color='#F5C518';return}
   st.active=true;st.lifetime=st.plan==='life';$('#done').hidden=false;refresh()});
