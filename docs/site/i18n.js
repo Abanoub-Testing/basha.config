@@ -1,8 +1,9 @@
 window.I18N = {
 ar: {
+ dev_h:"الأجهزة المتوافقة", dev_now:"متاح الآن", dev_soon:"قريباً",
  nav_features:"المميزات", nav_how:"إزاي يشتغل", nav_pricing:"الأسعار", nav_faq:"أسئلة شائعة", nav_activate:"تفعيل الجهاز",
  hero_pill:"٧ أيام تجربة مجانية بدون أي خطوات", hero_h1a:"شغّل قوائمك بشكل", hero_h1b:"سينمائي بجد",
- hero_lead:"باشا بلاير مشغّل IPTV سريع وأنيق بيشغّل قائمتك أنت (M3U أو Xtream). بحث ذكي، تبديل قنوات فوري، وأهم ماتشات النهارده في الرئيسية.",
+ hero_lead:"باشا بلاير مشغّل وسائط سريع وأنيق لقوائم التشغيل بتاعتك أنت (M3U أو Xtream). التطبيق مشغّل فقط ومفيهوش أي محتوى. بحث ذكي، تبديل قنوات فوري، وأهم ماتشات النهارده في الرئيسية.",
  cta_download:"حمّل التطبيق", cta_features:"اكتشف المميزات", mini1:"عربي · English · Deutsch", mini2:"من غير إعلانات", mini3:"تفعيل بالـ MAC",
  chip_live:"مباشر", chip_movies:"أفلام", chip_series:"مسلسلات", app_banner:"تحديث جديد متاح", app_today:"أهم مباريات اليوم", app_live:"مباشر",
  float_trial:"أيام تجربة مجانية", float_live:"بث مباشر الآن",
@@ -19,9 +20,10 @@ ar: {
  legal_h:"الشروط والأحكام", legal_back:"رجوع للرئيسية", legal_ph:"هذه صفحة مؤقتة. النص القانوني النهائي هيتضاف بعد المراجعة القانونية.",
  legal_1:"باشا بلاير مشغّل وسائط فقط. التطبيق مفيهوش أي قنوات أو محتوى ولا بنبيع قوائم تشغيل أو اشتراكات.",
  legal_2:"أنت المسؤول عن المحتوى اللي بتشغّله وعن حقك القانوني في استخدامه.",
+ legal_3:"باشا بلاير مش بيوفّر ولا بيبيع ولا بيستضيف أي قنوات أو محتوى أو قوائم تشغيل. الدفع بيكون مقابل ترخيص استخدام التطبيق على جهاز فقط.",
  foot_note:"باشا بلاير مشغّل فقط ولا يقدم أي محتوى.",
  feats:[
-  ["tv","بث مباشر","قنواتك مرتبة في مجموعات، وتبديل فوري بين القنوات."],
+  ["tv","بث مباشر","مصادرك مرتبة في مجموعات، وتبديل فوري بينها."],
   ["film","أفلام ومسلسلات","مكتبة منفصلة للأفلام والمسلسلات من نفس القائمة."],
   ["ball","أهم ماتشات النهارده","كروت كبيرة بالميعاد والعد التنازلي وشارة مباشر."],
   ["search","بحث ذكي","بحث سريع يفهم الأخطاء الإملائية، حتى في القوائم الضخمة."],
@@ -35,13 +37,16 @@ ar: {
   ["إزاي التجربة المجانية بتشتغل؟","أول ما تفتح التطبيق بتبدأ ٧ أيام تجربة بشكل تلقائي. بعدها التطبيق بيقفل لحد ما تفعّله من الموقع."],
   ["إيه هو كود الجهاز (MAC)؟","هو رقم بيحدد جهازك، بيظهر في التطبيق. بنستخدمه عشان نفعّل جهازك."],
   ["على أي أجهزة بيشتغل؟","دلوقتي على موبايلات أندرويد. أندرويد TV وباقي الأجهزة في المراحل الجاية."],
-  ["أنقل التفعيل لجهاز تاني؟","خاصية نقل الجهاز هتكون ضمن لوحة العميل. التفاصيل هتتأكد قبل الإطلاق."]
+  ["أنقل التفعيل لجهاز تاني؟","خاصية نقل الجهاز هتكون ضمن لوحة العميل. التفاصيل هتتأكد قبل الإطلاق."],
+  ["مين المسؤول عن المحتوى؟","أنت. باشا بلاير مشغّل وسائط فقط ومبنبيعش قنوات ولا قوائم ولا اشتراكات، ومش مسؤولين عن المحتوى اللي بتضيفه. استخدم بس محتوى ليك حق قانوني في تشغيله."],
+  ["أقدر أشتري التطبيق وأنا معنديش قائمة؟","التفعيل يخص التطبيق بس. من غير قائمة تشغيل بتاعتك مش هيظهر أي محتوى، فجرّب الأول في الـ ٧ أيام."]
  ]
 },
 en: {
+ dev_h:"Compatible devices", dev_now:"Available now", dev_soon:"Coming soon",
  nav_features:"Features", nav_how:"How it works", nav_pricing:"Pricing", nav_faq:"FAQ", nav_activate:"Activate device",
  hero_pill:"7 days free, nothing to set up", hero_h1a:"Play your lists in a truly", hero_h1b:"cinematic way",
- hero_lead:"Basha Player is a fast, elegant IPTV player for your own playlist (M3U or Xtream). Smart search, instant channel switching, and today's top matches on the home screen.",
+ hero_lead:"Basha Player is a fast, elegant media player for your own playlists (M3U or Xtream). It is a player only and includes no content. Smart search, instant channel switching, and today's top matches on the home screen.",
  cta_download:"Download the app", cta_features:"Explore features", mini1:"Arabic · English · Deutsch", mini2:"No ads", mini3:"Activation by MAC",
  chip_live:"Live", chip_movies:"Movies", chip_series:"Series", app_banner:"New update available", app_today:"Today's top matches", app_live:"LIVE",
  float_trial:"free trial days", float_live:"Live now",
@@ -58,9 +63,10 @@ en: {
  legal_h:"Legal terms", legal_back:"Back to home", legal_ph:"This is a placeholder page. The final legal text will be added after legal review.",
  legal_1:"Basha Player is a media player only. The app includes no channels or content and does not sell playlists or subscriptions.",
  legal_2:"You are responsible for the content you play and for your legal right to use it.",
+ legal_3:"Basha Player does not provide, sell or host any channels, content or playlists. Payment is for a licence to use the app on a device only.",
  foot_note:"Basha Player is a player only and provides no content.",
  feats:[
-  ["tv","Live TV","Your channels in groups, with instant switching."],
+  ["tv","Live streams","Your own sources in groups, with instant switching."],
   ["film","Movies and series","Separate libraries for movies and series from the same list."],
   ["ball","Today's top matches","Large cards with kickoff time, countdown and a LIVE badge."],
   ["search","Smart search","Fast search that forgives typos, even on huge lists."],
@@ -73,14 +79,17 @@ en: {
   ["Are channels included?","No. Basha Player is a player only. You add your own playlist (M3U or Xtream) from your provider."],
   ["How does the free trial work?","Your 7-day trial starts automatically when you first open the app. After that the app locks until you activate on the site."],
   ["What is the device MAC?","A number that identifies your device, shown in the app. We use it to activate your device."],
-  ["Which devices are supported?","Android phones now. Android TV and other devices come in later stages."],
-  ["Can I move my activation to another device?","Device switching will be part of the customer panel. Details will be confirmed before launch."]
+  ["Which devices are supported?","Android phones and tablets now. Android TV, Samsung, LG, Fire TV Stick and Windows are coming later."],
+  ["Can I move my activation to another device?","Device switching will be part of the customer panel. Details will be confirmed before launch."],
+  ["Who is responsible for the content?","You are. Basha Player is a media player only. We do not sell channels, playlists or subscriptions, and we are not responsible for what you add. Only play content you have the legal right to use."],
+  ["Can I buy the app without a playlist?","Activation covers the app only. Without your own playlist nothing will show, so test it during the 7 days first."]
  ]
 },
 de: {
+ dev_h:"Kompatible Geräte", dev_now:"Jetzt verfügbar", dev_soon:"Demnächst",
  nav_features:"Funktionen", nav_how:"So geht's", nav_pricing:"Preise", nav_faq:"FAQ", nav_activate:"Gerät aktivieren",
  hero_pill:"7 Tage kostenlos, ohne Einrichtung", hero_h1a:"Deine Playlists, so", hero_h1b:"kinoreif wie nie",
- hero_lead:"Basha Player ist ein schneller, eleganter IPTV-Player für deine eigene Playlist (M3U oder Xtream). Intelligente Suche, sofortiger Kanalwechsel und die wichtigsten Spiele des Tages auf dem Startbildschirm.",
+ hero_lead:"Basha Player ist ein schneller, eleganter Mediaplayer für deine eigenen Playlists (M3U oder Xtream). Er ist nur ein Player und enthält keine Inhalte. Intelligente Suche, sofortiger Kanalwechsel und die wichtigsten Spiele des Tages auf dem Startbildschirm.",
  cta_download:"App herunterladen", cta_features:"Funktionen entdecken", mini1:"Arabisch · English · Deutsch", mini2:"Keine Werbung", mini3:"Aktivierung per MAC",
  chip_live:"Live", chip_movies:"Filme", chip_series:"Serien", app_banner:"Neues Update verfügbar", app_today:"Wichtigste Spiele heute", app_live:"LIVE",
  float_trial:"Tage kostenlos testen", float_live:"Jetzt live",
@@ -97,9 +106,10 @@ de: {
  legal_h:"Rechtliches", legal_back:"Zurück zur Startseite", legal_ph:"Dies ist eine Platzhalterseite. Der endgültige Rechtstext folgt nach der rechtlichen Prüfung.",
  legal_1:"Basha Player ist nur ein Mediaplayer. Die App enthält keine Kanäle oder Inhalte und verkauft keine Playlists oder Abos.",
  legal_2:"Du bist für die abgespielten Inhalte und dein Recht zur Nutzung verantwortlich.",
+ legal_3:"Basha Player stellt keine Kanäle, Inhalte oder Playlists bereit, verkauft oder hostet sie nicht. Die Zahlung gilt nur für eine Lizenz zur Nutzung der App auf einem Gerät.",
  foot_note:"Basha Player ist nur ein Player und bietet keine Inhalte.",
  feats:[
-  ["tv","Live-TV","Deine Kanäle in Gruppen, mit sofortigem Wechsel."],
+  ["tv","Live-Streams","Deine eigenen Quellen in Gruppen, mit sofortigem Wechsel."],
   ["film","Filme und Serien","Getrennte Bibliotheken für Filme und Serien aus derselben Liste."],
   ["ball","Spiele des Tages","Große Karten mit Anstoßzeit, Countdown und LIVE-Badge."],
   ["search","Intelligente Suche","Schnelle Suche, die Tippfehler verzeiht, auch bei riesigen Listen."],
@@ -113,6 +123,8 @@ de: {
   ["Wie funktioniert der kostenlose Test?","Dein 7-Tage-Test startet automatisch beim ersten Öffnen der App. Danach sperrt die App, bis du auf der Website aktivierst."],
   ["Was ist die Geräte-MAC?","Eine Nummer, die dein Gerät kennzeichnet und in der App angezeigt wird. Wir nutzen sie zur Aktivierung."],
   ["Welche Geräte werden unterstützt?","Derzeit Android-Handys. Android TV und weitere Geräte folgen später."],
-  ["Kann ich die Aktivierung auf ein anderes Gerät übertragen?","Der Gerätewechsel wird Teil des Kundenbereichs. Details werden vor dem Start bestätigt."]
+  ["Kann ich die Aktivierung auf ein anderes Gerät übertragen?","Der Gerätewechsel wird Teil des Kundenbereichs. Details werden vor dem Start bestätigt."],
+  ["Wer ist für die Inhalte verantwortlich?","Du. Basha Player ist nur ein Mediaplayer. Wir verkaufen keine Kanäle, Playlists oder Abos und sind nicht für deine Inhalte verantwortlich. Spiele nur Inhalte ab, für die du die Rechte hast."],
+  ["Kann ich die App ohne Playlist kaufen?","Die Aktivierung betrifft nur die App. Ohne eigene Playlist wird nichts angezeigt, teste sie also zuerst in den 7 Tagen."]
  ]
 }};
