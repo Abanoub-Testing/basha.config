@@ -21,5 +21,6 @@
     "messageAr": "النسخة 1.0.4 نزلت: إعلانات ورسايل جوه التطبيق، وتحكم عن بعد في الأقسام، وتحسينات استقرار.",
     "messageEn": "Version 1.0.4 is out: in-app announcements, remote section controls, and stability improvements.",
     "force": false
-  }
+  },
+  "matches": []
 }
