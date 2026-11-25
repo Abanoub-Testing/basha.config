@@ -8,6 +8,15 @@ heart:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.600-7 10-
 resume:'<circle cx="12" cy="12" r="9"/><path d="M10 8.500l5 3.500-5 3.500z"/>',
 globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.500 3 14.500 0 18M12 3c-3 3.500-3 14.500 0 18"/>',
 bell:'<path d="M6 9a6 6 0 0 1 12 0c0 6 2 7 2 7H4s2-1 2-7zM10 20a2 2 0 0 0 4 0"/>'};
+var DEVICES=[
+ {n:{ar:'هواتف وتابلت أندرويد',en:'Android phones and tablets',de:'Android-Handys und Tablets'},i:'phone',now:true},
+ {n:{ar:'Android TV',en:'Android TV',de:'Android TV'},i:'tv',now:false},
+ {n:{ar:'Google TV',en:'Google TV',de:'Google TV'},i:'tv',now:false},
+ {n:{ar:'Samsung (Tizen)',en:'Samsung (Tizen)',de:'Samsung (Tizen)'},i:'tv',now:false},
+ {n:{ar:'LG (webOS)',en:'LG (webOS)',de:'LG (webOS)'},i:'tv',now:false},
+ {n:{ar:'Fire TV Stick',en:'Fire TV Stick',de:'Fire TV Stick'},i:'stick',now:false},
+ {n:{ar:'Windows',en:'Windows',de:'Windows'},i:'pc',now:false}];
+var DI={phone:'<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',tv:'<rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/>',stick:'<rect x="2" y="9" width="16" height="6" rx="2"/><path d="M18 12h3"/>',pc:'<rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M2 20h20M9 16v4M15 16v4"/>'};
 var lang='ar';
 try{lang=localStorage.getItem('bp_lang')||'ar'}catch(e){}
 var qm=location.search.match(/lang=(ar|en|de)/);if(qm)lang=qm[1];
@@ -21,6 +30,8 @@ function render(){
   document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===lang)});
   document.getElementById('featGrid').innerHTML=d.feats.map(function(f){return '<div class="card reveal in"><div class="ico"><svg viewBox="0 0 24 24">'+ICONS[f[0]]+'</svg></div><h3>'+f[1]+'</h3><p>'+f[2]+'</p></div>'}).join('');
   document.getElementById('faqList').innerHTML=d.faqs.map(function(q){return '<details><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>'}).join('');
+  var row=DEVICES.map(function(x){return '<div class="dev'+(x.now?' now':'')+'"><svg viewBox="0 0 24 24">'+DI[x.i]+'</svg><b>'+x.n[lang]+'</b><em>'+(x.now?d.dev_now:d.dev_soon)+'</em></div>'}).join('');
+  document.getElementById('devTrack').innerHTML=row+row+row+row;
   bindCards();
 }
 function bindCards(){
