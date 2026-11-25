@@ -13,6 +13,10 @@
     --red: #ed313e;
     --hairline: #eae9ea;
     --sand: #f4efec;
+    --app-bg: #101418;
+    --app-card: #1a2027;
+    --app-text: #eef2f5;
+    --app-text2: #93a0ab;
   }
   * { box-sizing: border-box; }
   body {
@@ -33,6 +37,7 @@
   @media (min-width: 768px) { .card { padding: 36px; margin: 40px auto; } }
   h1 { font-size: 26px; margin: 0 0 4px; }
   h2 { font-size: 20px; margin: 32px 0 12px; padding-top: 20px; border-top: 1px solid var(--hairline); }
+  h3 { font-size: 15px; margin: 16px 0 8px; }
   .fact { color: var(--teal-dark); font-weight: 600; margin: 0 0 8px; }
   .intro { color: var(--ink); margin: 0 0 8px; }
   .note {
@@ -43,7 +48,7 @@
   }
   .note b { display: block; margin-bottom: 2px; }
   label { display: block; font-size: 14px; color: var(--ink2); margin: 14px 0 4px; }
-  input[type="text"], input[type="password"], textarea {
+  input[type="text"], input[type="password"], input[type="date"], input[type="time"], textarea {
     width: 100%;
     padding: 10px 12px;
     border: 1px solid var(--hairline);
@@ -73,18 +78,87 @@
   .btn-primary { background: var(--ink); color: #fff; }
   .btn-secondary { background: #fff; color: var(--ink); border: 1px solid var(--hairline); }
   .btn-ghost { background: none; color: var(--ink2); text-decoration: underline; padding: 8px; }
+  .btn-danger { background: none; color: var(--red); border: 1px solid var(--red); padding: 8px 14px; min-height: 40px; margin-top: 0; font-size: 13px; }
   .btn:disabled { opacity: .5; cursor: default; }
   #status { min-height: 24px; margin: 12px 0 0; color: var(--ink2); }
   #status.err { color: var(--red); }
   .caption { font-size: 13px; color: var(--ink2); margin-top: 4px; }
   footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--hairline); font-size: 13px; color: var(--ink2); }
+
+  /* Matches editor */
+  .match-row {
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    padding: 14px;
+    margin: 12px 0;
+  }
+  .match-row .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; }
+  .match-row label { margin-top: 8px; }
+  .match-head { display: flex; align-items: center; justify-content: space-between; }
+  .match-head b { font-size: 14px; color: var(--ink2); }
+  .feat-row { display: flex; align-items: center; gap: 8px; margin-top: 12px; }
+  .feat-row input { width: 20px; height: 20px; accent-color: var(--teal-dark); }
+  .feat-row span { font-size: 14px; }
+
+  /* App mock preview */
+  .mock {
+    background: var(--app-bg);
+    border-radius: 18px;
+    padding: 16px;
+    color: var(--app-text);
+    direction: rtl;
+    margin-top: 12px;
+  }
+  .mock-topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .mock-title { font-weight: 700; font-size: 17px; }
+  .mock-icons { color: var(--app-text2); font-size: 15px; }
+  .mock-ann {
+    background: var(--teal);
+    color: #10312a;
+    font-weight: 600;
+    font-size: 13px;
+    border-radius: 10px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+  }
+  .mock-sections { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .mock-chip {
+    background: var(--app-card);
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: var(--app-text);
+  }
+  .mock-matches-title { color: var(--app-text2); font-size: 12px; margin: 8px 0 6px; }
+  .mock-match {
+    background: var(--app-card);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px;
+  }
+  .mock-crest {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--teal-dark); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; flex-shrink: 0;
+  }
+  .mock-match .teams { flex: 1; }
+  .mock-match .meta { color: var(--app-text2); font-size: 11px; }
+  .mock-live {
+    background: var(--red); color: #fff; font-size: 10px; font-weight: 700;
+    border-radius: 6px; padding: 2px 6px;
+  }
+  .mock-when { text-align: left; font-size: 12px; color: var(--app-text2); }
+  .mock-empty { color: var(--app-text2); font-size: 13px; padding: 8px 0; }
 </style>
 </head>
 <body>
 <div class="card">
   <h1>لوحة تحكم بشة بلاير</h1>
-  <p class="fact">التغيير يوصل للمستخدمين أول ما يفتحوا التطبيق</p>
-  <p class="intro">من هنا تتحكم في التطبيق من غير ما تنزل نسخة جديدة: إعلان للناس، إخفاء وإظهار الأقسام، وإشعار تحديث.</p>
+  <p class="fact">التغيير يوصل للمستخدمين خلال دقايق من الحفظ</p>
+  <p class="intro">من هنا تتحكم في التطبيق من غير ما تنزل نسخة جديدة: إعلان للناس، إخفاء وإظهار الأقسام، ماتشات النهاردة، وإشعار تحديث.</p>
 
   <h2>مفتاح الدخول</h2>
   <div class="note">
@@ -120,6 +194,12 @@
   <p>تقدر تخفي أي قسم من التطبيق فورًا وترجعه تاني في أي وقت.</p>
   <div id="toggles"></div>
 
+  <h2>الماتشات</h2>
+  <p>ضيف ماتشات النهاردة وبكرة هنا. التوقيت بتوقيت القاهرة، ولوجوهات الأندية الكبيرة بتتعرف تلقائي في التطبيق. علّم "مميزة" على الماتشات اللي تظهر في الرئيسية.</p>
+  <div id="matchList"></div>
+  <button class="btn btn-secondary" id="addMatch">إضافة ماتش</button>
+  <p class="caption">لو مسحت كل الماتشات القسم هيبقى فاضي - وتقدر تخفيه خالص من مفاتيح الأقسام فوق. الماتشات القديمة امسحها بنفسك آخر اليوم.</p>
+
   <h2>إشعار التحديث</h2>
   <p>لما تنزل نسخة جديدة، اكتب رقمها هنا والمستخدمين هيشوفوا إشعار بلينك التحميل. خلي الرقم 0 لو مفيش تحديث.</p>
   <div class="ltr">
@@ -134,6 +214,10 @@
     <label for="updEn">رسالة التحديث بالإنجليزي (اختياري)</label>
     <input type="text" id="updEn">
   </div>
+
+  <h2>معاينة التطبيق</h2>
+  <p>دي صورة تقريبية لشكل التطبيق بالإعدادات الحالية اللي في الصفحة - بتتحدث لحظيًا وأنت بتعدل، قبل ما تحفظ.</p>
+  <div class="mock" id="mock"></div>
 
   <h2>متقدم</h2>
   <button class="btn btn-ghost" id="jsonToggle">فتح الـ JSON الخام</button>
@@ -193,7 +277,7 @@ function fromBase64(b64) {
   return new TextDecoder().decode(bytes);
 }
 
-// Build toggle rows
+// Section toggle rows
 TOGGLES.forEach(([key, label]) => {
   const row = document.createElement('div');
   row.className = 'toggle-row';
@@ -211,11 +295,52 @@ function getSeg(el) {
 function setSeg(el, on) {
   el.querySelectorAll('button').forEach((b) => b.classList.toggle('on', (b.dataset.v === 'on') === !!on));
 }
-document.addEventListener('click', (e) => {
-  const btn = e.target.closest('.seg button');
-  if (!btn) return;
-  setSeg(btn.parentElement, btn.dataset.v === 'on');
-});
+
+// ---- Matches editor ----
+let matchSeq = 0;
+function addMatchRow(m) {
+  m = m || {};
+  const id = ++matchSeq;
+  const row = document.createElement('div');
+  row.className = 'match-row';
+  row.dataset.row = id;
+  row.innerHTML = `
+    <div class="match-head"><b>ماتش</b><button type="button" class="btn btn-danger" data-del>مسح</button></div>
+    <div class="grid2">
+      <div><label>التاريخ</label><input type="date" data-f="date" value="${m.date || ''}"></div>
+      <div><label>الميعاد (القاهرة)</label><input type="time" data-f="kickoff" value="${m.kickoff || ''}"></div>
+    </div>
+    <label>البطولة</label><input type="text" data-f="competition" value="${esc(m.competition || '')}" placeholder="الدوري المصري">
+    <div class="grid2">
+      <div><label>الفريق الأول</label><input type="text" data-f="home" value="${esc(m.home || '')}" placeholder="الأهلي"></div>
+      <div><label>الفريق التاني</label><input type="text" data-f="away" value="${esc(m.away || '')}" placeholder="الزمالك"></div>
+    </div>
+    <label>القناة</label><input type="text" data-f="channel" value="${esc(m.channel || '')}" placeholder="ON Time Sports 1">
+    <div class="feat-row"><input type="checkbox" data-f="featured" ${m.featured ? 'checked' : ''} id="feat${id}"><span>مميزة (تظهر في الرئيسية)</span></div>
+  `;
+  row.querySelector('[data-del]').addEventListener('click', () => { row.remove(); renderPreview(); });
+  $('matchList').appendChild(row);
+}
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+}
+function readMatches() {
+  const out = [];
+  document.querySelectorAll('#matchList .match-row').forEach((row) => {
+    const get = (f) => row.querySelector(`[data-f="${f}"]`).value.trim();
+    const m = {
+      date: get('date'),
+      competition: get('competition'),
+      home: get('home'),
+      away: get('away'),
+      kickoff: get('kickoff'),
+      channel: get('channel'),
+      featured: row.querySelector('[data-f="featured"]').checked,
+    };
+    if (m.date || m.home || m.away) out.push(m);
+  });
+  return out;
+}
 
 function formToConfig() {
   const version = parseInt($('updVer').value, 10);
@@ -233,6 +358,7 @@ function formToConfig() {
     update: hasUpd
       ? { versionCode: version, url: $('updUrl').value.trim(), messageAr: $('updAr').value.trim(), messageEn: $('updEn').value.trim(), force: false }
       : null,
+    matches: readMatches(),
   };
 }
 
@@ -252,7 +378,72 @@ function configToForm(cfg) {
   $('updUrl').value = u.url || DOWNLOAD_PAGE;
   $('updAr').value = u.messageAr ?? '';
   $('updEn').value = u.messageEn ?? '';
+  $('matchList').innerHTML = '';
+  if (Array.isArray(cfg.matches) && cfg.matches.length > 0) {
+    cfg.matches.forEach((m) => addMatchRow(m));
+  }
 }
+
+// ---- Live app mock preview ----
+function initials(name) {
+  const w = name.trim().split(/\s+/).filter(Boolean);
+  if (w.length === 0) return '؟';
+  if (w.length === 1) return w[0].slice(0, 2);
+  return w[0][0] + w[1][0];
+}
+function isLiveNow(m) {
+  if (!m.date || !m.kickoff) return false;
+  const kick = new Date(`${m.date}T${m.kickoff}:00+02:00`).getTime();
+  const now = Date.now();
+  return now >= kick && now < kick + 115 * 60000;
+}
+function renderPreview() {
+  const cfg = formToConfig();
+  const t = cfg.toggles || {};
+  let html = '<div class="mock-topbar"><span class="mock-title">بشة بلاير</span><span class="mock-icons">';
+  if (t.search) html += '🔍 ';
+  if (t.matches) html += '⚽';
+  html += '</span></div>';
+  if (cfg.announcement && (cfg.announcement.ar || cfg.announcement.en)) {
+    html += `<div class="mock-ann">${esc(cfg.announcement.ar || cfg.announcement.en)}</div>`;
+  }
+  const sectionNames = { live: 'اللايف', movies: 'الأفلام', series: 'المسلسلات', matches: 'الماتشات', favorites: 'المفضلة', guide: 'الجايد', search: 'البحث' };
+  html += '<div class="mock-sections">';
+  Object.keys(sectionNames).forEach((k) => {
+    if (t[k]) html += `<span class="mock-chip">${sectionNames[k]}</span>`;
+  });
+  html += '</div>';
+  if (t.matches) {
+    const matches = cfg.matches || [];
+    const featured = matches.filter((m) => m.featured);
+    html += '<div class="mock-matches-title">ماتشات مميزة</div>';
+    if (featured.length === 0) {
+      html += '<div class="mock-empty">مفيش ماتشات مميزة — علّم "مميزة" على أي ماتش عشان يظهر هنا.</div>';
+    }
+    featured.forEach((m) => {
+      html += '<div class="mock-match">';
+      html += `<span class="mock-crest">${esc(initials(m.home))}</span>`;
+      html += `<span class="teams">${esc(m.home)} × ${esc(m.away)}<div class="meta">${esc(m.competition)}${m.channel ? ' · ' + esc(m.channel) : ''}</div></span>`;
+      html += `<span class="mock-when">${isLiveNow(m) ? '<span class="mock-live">مباشر</span>' : esc(m.kickoff || '')}</span>`;
+      html += `<span class="mock-crest">${esc(initials(m.away))}</span>`;
+      html += '</div>';
+    });
+    const rest = matches.length - featured.length;
+    if (rest > 0) html += `<div class="mock-empty">+ ${rest} ماتش تاني في قسم الماتشات</div>`;
+    if (matches.length === 0) html += '<div class="mock-empty">قسم الماتشات فاضي دلوقتي.</div>';
+  }
+  $('mock').innerHTML = html;
+}
+
+// Re-render preview on any edit
+document.addEventListener('input', () => renderPreview());
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.seg button')) {
+    const btn = e.target.closest('.seg button');
+    setSeg(btn.parentElement, btn.dataset.v === 'on');
+    renderPreview();
+  }
+});
 
 function authHeaders() {
   return { Authorization: `Bearer ${$('token').value.trim()}`, Accept: 'application/vnd.github+json' };
@@ -275,6 +466,7 @@ async function load() {
     raw = JSON.parse(fromBase64(data.content));
     sha = data.sha || null;
     configToForm(raw);
+    renderPreview();
     say('اتحمّلت الإعدادات الحالية. عدّل براحتك وبعدين احفظ.');
   } catch {
     say('مفيش اتصال بالنت أو جيتهاب مش بيرد. جرّب تاني.', true);
@@ -316,7 +508,7 @@ async function save() {
     const data = await resp.json();
     sha = data.content?.sha || null;
     raw = cfg;
-    say('اتحفظ. التطبيق هياخد الإعدادات الجديدة عند كل مستخدم أول ما يفتح.');
+    say('اتحفظ. التغيير يوصل للتطبيق خلال حوالي ٥ دقايق.');
   } catch {
     say('مفيش اتصال بالنت أو جيتهاب مش بيرد. الحفظ متمش.', true);
   } finally {
@@ -326,6 +518,7 @@ async function save() {
 
 $('loadBtn').addEventListener('click', load);
 $('saveBtn').addEventListener('click', save);
+$('addMatch').addEventListener('click', () => { addMatchRow(); renderPreview(); });
 $('forgetBtn').addEventListener('click', () => {
   localStorage.removeItem(TOKEN_KEY);
   $('token').value = '';
@@ -346,6 +539,7 @@ $('jsonApply').addEventListener('click', () => {
   try {
     raw = JSON.parse($('jsonText').value);
     configToForm(raw);
+    renderPreview();
     $('jsonBox').hidden = true;
     $('jsonToggle').textContent = 'فتح الـ JSON الخام';
     say('اتطبّق الـ JSON على الخانات. راجع ودوس حفظ.');
@@ -361,6 +555,7 @@ if (savedToken) {
   load();
 } else {
   configToForm({});
+  renderPreview();
 }
 </script>
 </body>
