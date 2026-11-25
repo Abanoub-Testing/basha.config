@@ -17,10 +17,10 @@ var DEVICES=[
  {n:{ar:'Fire TV Stick',en:'Fire TV Stick',de:'Fire TV Stick'},i:'stick',now:false},
  {n:{ar:'Windows',en:'Windows',de:'Windows'},i:'pc',now:false}];
 var DI={phone:'<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',tv:'<rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/>',stick:'<rect x="2" y="9" width="16" height="6" rx="2"/><path d="M18 12h3"/>',pc:'<rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M2 20h20M9 16v4M15 16v4"/>'};
-var lang='ar';
-try{lang=localStorage.getItem('bp_lang')||'ar'}catch(e){}
+var lang='en';
+try{lang=localStorage.getItem('bp_lang')||'en'}catch(e){}
 var qm=location.search.match(/lang=(ar|en|de)/);if(qm)lang=qm[1];
-if(!I18N[lang])lang='ar';
+if(!I18N[lang])lang='en';
 function t(k){return I18N[lang][k]}
 function render(){
   var d=I18N[lang];
